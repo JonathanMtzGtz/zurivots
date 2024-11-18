@@ -126,7 +126,7 @@ p {
   
   .hero-section {
     height: 65vh; /* 45% del alto del dispositivo */
-    background-image: url('/img/hero.png'); /* Imagen de fondo */
+    background-image: url('img/hero.png'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     display: flex;
