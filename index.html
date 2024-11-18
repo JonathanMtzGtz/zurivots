@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section</title>
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+
+
+</head>
+<header>
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="#" class="navbar-logo">
+            <img src="/img/logox.png" alt="Logo" class="logo-img">
+        </a>
+
+        <!-- Menú de navegación -->
+        <ul class="navbar-menu">
+          <li><a href="/index.html">inicio</a></li>
+          <li><a href="/fundaciones.html">Más Información</a></li>
+          <li><a href="https://www.zurichsantander.com.mx/">Regresar a página principal</a></li>
+          
+      </ul>
+
+        <!-- Ícono de menú para dispositivos móviles -->
+        <div class="navbar-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="text-column">
+      <h1 class="title">CON TU VOTO, CONTRIBUYES A <br>MEJORAR LA VIDA DE MILES DE <br> MEXICANOS</h1>
+      <p class="subtitle">En Zurich Santander Seguros México, creemos en el poder de contribuir al bienestar de nuestra comunidad. Es por eso que estamos orgullosos de apoyar tres proyectos clave en áreas fundamentales para el desarrollo de nuestro país:
+       <br><strong>Salud, Educación y Medio Ambiente</strong></p>
+    </div>
+    <div class="logo-column">
+      <img src="/img/logoblanco.png" alt="Logo" class="logo">
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+    <!-- Título principal de la sección -->
+    <h2 class="section-title">APOYA CON TU VOTO</h2>
+    
+    <!-- Filas y columnas -->
+    <div class="row">
+      <!-- Primera columna -->
+      <div class="column">
+        <img src="/img/saludporella.png" alt="Imagen 1" class="column-image">
+        <!--<h3 class="column-subtitle">Subtítulo 1</h3>-->
+        <h4 class="column-title">SALUD POR ELLA</h4>
+        <p class="column-paragraph">Apoya a las mujeres mexicanas para que accedan a servicios de salud básicos y de calidad, sin importar su ubicación <br> <br>Juntos podemos mejorar la calidad de vida, prevenir enfermedades y asegurar que reciban tratamientos efectivos</p>
+        <button class="vote-button" onclick="openVoteModal(1)">Votar</button>
+      </div>
+      
+      <!-- Segunda columna -->
+      <div class="column">
+        <img src="/img/porunfuturo.JPG" alt="Imagen 2" class="column-image">
+        <!--<<h3 class="column-subtitle">Subtítulo 2</h3>-->
+        <h4 class="column-title">POR UN FUTURO BRILLANTE</h4>
+        <p class="column-paragraph">Apoya a que los niños y jóvenes mexicanos tengan acceso a la educación, las oportunidades y el apoyo necesarios para alcanzar su máximo potencial <br> <br>Juntos podemos garantizar que ningún estudiante quede atrás <br></p>
+        <button class="vote-button" onclick="openVoteModal(2)">Votar</button>
+      </div>
+    </div>
+    
+    <!-- Columna que ocupa el ancho de las dos anteriores -->
+    <div class="row">
+      <div class="column full-width">
+        <img src="/img/renaciendonuestraciudad.jpg" alt="Imagen 3" class="column-image">
+        <!-- <h3 class="column-subtitle">Subtítulo 3</h3>-->
+        <h4 class="column-title">RENACIENDO NUESTRA CIUDAD</h4>
+        <p class="column-paragraph acomodox">Impulsa la regeneración de las chinampas en diversas comunidades campesinas de Xochimilco, contribuye a la regulación del clima local, la purificación del agua, la polinización de cultivos y la captura de carbono <br><br>Junto podemos mejorar el medio ambiente y asegurar un futuro sostenible para México</p>
+        <button class="vote-button" onclick="openVoteModal(3)">Votar</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal de Votación -->
+  <div id="voteModal" class="vote-modal">
+    <div class="vote-modal-content">
+      <!-- Barra con el título en la izquierda de la imagen -->
+      <div class="modal-image-bar">
+        <h3 id="modalTitle" class="modal-title">Título de la Sección</h3>
+      </div>
+  
+      <div id="modalImage">
+        <img src="" alt="Imagen de Votación" class="modal-image">
+      </div>
+      
+      <form id="voteForm" onsubmit="submitVoteForm(event)">
+        <label for="sectionTitle"></label>
+        <input type="text" id="sectionTitle" name="sectionTitle" value="" readonly>
+    
+        <label for="insurance">¿Tienes un seguro con nosotros?</label>
+        <select id="insurance" name="insurance" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+        </select>
+    
+        <label for="age">Edad</label>
+        <select id="age" name="age" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46+">46+</option>
+        </select>
+    
+        <label for="gender">Sexo</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="male">Masculino</option>
+            <option value="female">Femenino</option>
+            <option value="other">Otro</option>
+        </select>
+    
+        <button type="submit" class="submit-button">Enviar Voto</button>
+        <button type="button" class="cancel-button" onclick="closeVoteModal()">Cancelar</button>
+    </form>
+    
+    </div>
+  </div>
+  
+  
+  <!-- Línea divisoria superior del footer -->
+<div class="footer-top-divider"></div>
+
+  <footer class="footer">
+    <div class="footer-content">
+        <!-- Logo en el centro -->
+        <div class="footer-logo">
+            <img src="/img/logox.png" alt="Logo" class="logo-img">
+        </div>
+
+        <!-- Menú de enlaces -->
+        <nav class="footer-menu">
+            <a href="/fundaciones.html">Más Información</a>
+           <!--  <a href="#link2">Enlace 2</a>
+            <a href="#link3">Enlace 3</a>-->
+        </nav>
+
+        <!-- Línea divisoria -->
+        <hr class="footer-divider">
+
+        <!-- Derechos reservados y redes sociales -->
+        <div class="footer-bottom">
+            <p class="footer-rights">© 2024 Derechos Reservados</p>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  
+  
+  
+  
+  
+
+
+  
+
+<script src="script.js"></script>
+</body>
+</html>
