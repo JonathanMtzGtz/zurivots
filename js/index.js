@@ -1,5 +1,5 @@
 var tipoVoto = 0;
-var savevoto = "http://localhost:3001/api/zurich/savevoto";
+var savevoto = "https://apirest-mysql-ywx2.onrender.com"+"/api/zurich/savevoto";
 const btn_save = document.getElementById("btn_save");
 const btn_cancel = document.getElementById("btn_cancel");
 // Función para alternar el menú en dispositivos móviles
@@ -61,7 +61,7 @@ btn_save.disabled = true;
   const insurance = document.getElementById('insurance').value;
   const age = document.getElementById('age').value;
   const gender = document.getElementById('gender').value;
-  console.log(sectionTitle, insurance, age, gender)
+  //console.log(sectionTitle, insurance, age, gender)
   var data = {
     campania: sectionTitle,
     seguro: insurance,
