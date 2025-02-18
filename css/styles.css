@@ -447,6 +447,11 @@ form select:focus {
     
 }
 
+
+.acomodox{
+  margin-right: 0%;
+  margin-left: 0%;
+}
  /* Responsividad */
  @media (min-width: 768px) {
   
@@ -602,6 +607,7 @@ align-content:center;
 .custom-hero-text h1 {
 font-size: 2rem;
 margin-bottom: 3rem;
+margin-top: 1.5rem;
 }
 
 .custom-hero-text p {
